@@ -2,7 +2,9 @@ from ultralytics import YOLO
 import sys
 import cv2
 
-def count_silkworms(image_path, model_path="best.pt", show_image=False):
+MODEL = "runs/detect/silkworm-detector4/weights/best.pt"
+
+def count_silkworms(image_path, model_path=MODEL, show_image=False):
     # Charger le modèle YOLO entraîné
     model = YOLO(model_path)
 
@@ -31,6 +33,6 @@ if __name__ == "__main__":
         sys.exit(1)
 
     image_path = sys.argv[1]
-    model_path = sys.argv[2] if len(sys.argv) > 2 else "best.pt"
+    model_path = sys.argv[2] if len(sys.argv) > 2 else MODEL
 
     count_silkworms(image_path, model_path, show_image=True)

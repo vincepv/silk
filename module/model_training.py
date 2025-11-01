@@ -5,7 +5,7 @@ model = YOLO('yolov8n.pt')  # 'n' = nano model, rapide pour débuter
 
 # Entraîner sur ton dataset
 model.train(
-    data='silkworm.yaml',
+    data='module/silkworm.yaml',
     epochs=50,
     imgsz=640,
     batch=8,
